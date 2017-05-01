@@ -1,0 +1,120 @@
+%
+% Vorlage
+%
+% Stefan Taber <stefan.taber@inso.tuwien.ac.at>
+%
+\documentclass[a4paper,10pt,english]{INSOexpose}
+\inputencoding{utf8} % linux, mac
+% \inputencoding{latin1} % linux, mac
+
+%
+%TODO Diese Informationen sind anzupassen
+%
+\title{
+	\langchooser{
+		Preliminary thesis title
+	}{
+		Vorl\"aufiger Arbeitstitel der Arbeit
+	}
+}
+% Bitte setzen falls der Titel zu lang ist
+%\shorttitle{Kurztitel}
+\author{Vorname Nachname}
+\matrikelnr{Matrikelnummer}
+\kennzahl{Kennzahl}
+\studium{Studienrichtung}
+\date{Datum}
+\dokumenttyp{%
+	\langchooser{Bachelor Thesis}{Bachelorarbeit}
+}
+\assistent{}
+
+% Bibliographie file
+\bibliography{db}
+
+\begin{document}
+\maketitle
+
+%=======================================================================
+\section{\langchooser{Problem Description}{Problemstellung}}
+%=======================================================================
+
+\langchooser{
+	General problem: Description of the concrete problem in a few sentences. Which topic is assigned to the job?
+}{
+	Allgemeine Problemstellung: Formulierung der konkreten Problemstellung in wenigen Sätzen. Welchem Themenbereich ist die Arbeit zuzuordnen?
+}
+
+%=======================================================================
+\section{\langchooser{Expected Results}{Zielsetzung/Motivation}}
+%=======================================================================
+
+\langchooser
+{
+	What is to be achieved through the thesis, what motivates you to this work?
+}
+{
+	Welches Ziel soll durch die Bachelorarbeit erreicht werden, was motiviert Sie zu dieser Arbeit? 
+}
+
+%=======================================================================
+\section{\langchooser{Methodological Approach}{Methodik}}
+%=======================================================================
+
+\langchooser
+{
+	Are there theoretical, pratical or empirical analyzes? Clear display of used theoretical and practical methods (survey, research, statistics, rapid prototyping, object oriented analysis, UML, component-based development, programming, etc.).
+}
+{
+	Werden theoretische, praktische oder empirische Analysen durchgeführt? Klare Darstellung der eingesetzten theoretischen und praktischen Methoden (Befragung, Recherche, Statistik, 	Rapid Prototyping, Objektorientierte Analyse, UML, Komponenten-basierte Entwicklung, Programmiersprachen etc.).
+}
+
+%=======================================================================
+\section{State of the Art}
+%=======================================================================
+
+\langchooser
+{
+	Existing solutions or similar projects of the topic. At least 5 references should be in this section.
+}
+{
+	Welche Lösungen oder ähnlichen Projekte gibt es schon – Einbettung von Literaturzitaten (mind. 5);
+	Fallbeispiele.
+}
+
+\langchooser{Example citation}{Beispielzitat}: \cite{fankhauser:2009:softwaretechnik-security}
+
+%=======================================================================
+\section{\langchooser{Table of Contents}{Inhaltsverzeichnis}}
+%=======================================================================
+
+\langchooser
+{	
+	Preliminary structor of the thesis: about 1 page
+}
+{
+	Geplante Struktur der Arbeit: ca. 1 Seite	
+}
+
+
+\begin{samepage}
+  \begin{contentstructure}
+    \item Einleitung	\estimatedpages{3 Seiten}
+    \item weiteres Kapitel \estimatedpages{x Seiten}
+    \begin{contentstructure}
+      \item erstes Unterkapitel
+      \item \dots
+    \end{contentstructure}
+    \item \dots
+  \end{contentstructure}
+\end{samepage}
+
+%=======================================================================
+%\section{Zeitplan}
+%=======================================================================
+% Zeitplanung der geplanten Arbeit mit wichtigen Meilensteine.
+
+% Bibliographie
+\printbibliography
+
+\end{document}
