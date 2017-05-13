@@ -12,7 +12,7 @@
 %
 \title{
 	\langchooser{
-		Preliminary thesis title
+		Lyra2 implementation in Java
 	}{
 		Vorl\"aufiger Arbeitstitel der Arbeit
 	}
@@ -39,50 +39,63 @@
 \section{\langchooser{Problem Description}{Problemstellung}}
 %=======================================================================
 
-\langchooser{
-	General problem: Description of the concrete problem in a few sentences. Which topic is assigned to the job?
-}{
-	Allgemeine Problemstellung: Formulierung der konkreten Problemstellung in wenigen Sätzen. Welchem Themenbereich ist die Arbeit zuzuordnen?
-}
+Password-based authentication is the most widespread method of proving the identity of a user or approving access to a resource. It is common practice to use Password Hashing Schemes (PHS for short) in order to avoid manipulating the password in cleartext. These schemes are often built by combining other cryptographic primitives (most notably, cryptographic hash functions) in order to make the resulting hash as difficult to invert as possible. The existing PHS called Lyra2 \cite{Andrade:2016:Lyra2} and its reference implementation are the primary focus of this thesis. 
 
 %=======================================================================
 \section{\langchooser{Expected Results}{Zielsetzung/Motivation}}
 %=======================================================================
 
-\langchooser
-{
-	What is to be achieved through the thesis, what motivates you to this work?
-}
-{
-	Welches Ziel soll durch die Bachelorarbeit erreicht werden, was motiviert Sie zu dieser Arbeit? 
-}
+There are several goals for this thesis:
+
+\begin{enumerate}
+\item Provide a test harness for the existing implementation of Lyra2.
+\item Port the generic single-threaded Lyra2 variant to Java.
+\item Assess algorithm-level compatibility of the implementations.
+\item Compare performance and other practical details of the implementations.
+\end{enumerate}
 
 %=======================================================================
 \section{\langchooser{Methodological Approach}{Methodik}}
 %=======================================================================
 
-\langchooser
-{
-	Are there theoretical, pratical or empirical analyzes? Clear display of used theoretical and practical methods (survey, research, statistics, rapid prototyping, object oriented analysis, UML, component-based development, programming, etc.).
-}
-{
-	Werden theoretische, praktische oder empirische Analysen durchgeführt? Klare Darstellung der eingesetzten theoretischen und praktischen Methoden (Befragung, Recherche, Statistik, 	Rapid Prototyping, Objektorientierte Analyse, UML, Komponenten-basierte Entwicklung, Programmiersprachen etc.).
-}
+The core of Lyra2 \cite{Andrade:2016:Lyra2} is a \emph{cryptographic sponge}, a simple yet elegant construction which in turn heavily relies on a fixed-width permutation. Blake2b \cite{Aumasson:2013:BLAKE2} or BlaMka \cite{Andrade:2016:Lyra2} are good examples of existing cryptographic hash functions which are often used as building blocks in a cryptographic sponge. However, the theoretical properties of neither cryptographic hash functions nor cryptographic sponges are the focus of this thesis. Instead, this work has the following approach:
+
+\subsection{Test harness}
+\label{subsection:test-harness}
+
+Current Lyra2 implementation is written in C, its build system is a single makefile and there are shell scripts that run basic benchmarks. The makefile supports six build targets (\texttt{generic-x86-64}, \texttt{linux-x86-64-sse}, \texttt{linux-x86-64-cuda}, etc.), three sponges (Blake2b, BlaMka and half-round BlaMka), two modes of parallelism (single- and multithreaded) and the number of columns of the memory matrix is also set at compile time. This results in a (really) big build matrix. So, the executables it produces should be tested automatically which is currently not done at all.
+
+As the first step of this thesis, an improved build system and a unit test system will be developed. There are many possible ways to do this but I would like to propose the following:
+
+\begin{enumerate}
+\item Write a \texttt{Python} script to automate the \texttt{makefile} building process. Here is
+  \href{https://github.com/all3fox/Lyra/blob/91cc07252ac65370134b4b02cce3cb29fbf3efc1/Lyra2/tests/build_lyra2.py}{its first version}.
+\item Write \texttt{pytest} unit tests. They allow easy parallel testing. Here are \href{https://github.com/all3fox/Lyra/blob/91cc07252ac65370134b4b02cce3cb29fbf3efc1/Lyra2/tests/build_lyra2.py}{first sanity tests}.
+\item Write a \texttt{Python} script that would generate hash values for specific passwords/parameters.
+\item Write further unit tests to verify that new Lyra2 executables generate the same hashes.
+\end{enumerate}
+
+There are many reasons to introduce yet another language (\texttt{Python}) and its accompanying infrastructure to this project. For example, authors of Lyra2 are already moving away from shell scripts to \texttt{Python} scripts for benchmarking. If necessary, further reasons may be explained (i.e. good subprocess control for unit testing of executables compiled from \texttt{C} or \texttt{Java}).
+
+\subsection{Lyra2 implementation in Java}
+
+There are several scenarios when a Java implementation might be better than the original C implementation. For example, developers for Android devices might benefit from having a native library. Moreover, the porting process also means that another developer takes a look at the original implementation and can contribute improvements, \href{https://github.com/leocalm/Lyra/pull/6}{see here for an example}.
+
+\subsection{Algorithm level compatibility}
+
+This is the primary goal of the thesis: to implement Lyra2 in Java in such a way that it produces identical hashes (given the same password, salt and other parameters) when compared with the existing C implementation. In order to achieve that, the steps described above in \ref{subsection:test-harness} are essential. However, one must also account for unexpected discrepancies that might disallow such compatibility. If that will be the case, an explanation will be provided.
+
+\subsection{Performace comparison}
+
+This would be a logical conclusion for the thesis. Lyra2 was compared to other participants of the Password Hashing Competition in \cite{cryptoeprint:2015:265}, \cite{chang2015performance} and this work will take a similar approach.
 
 %=======================================================================
 \section{State of the Art}
 %=======================================================================
 
-\langchooser
-{
-	Existing solutions or similar projects of the topic. At least 5 references should be in this section.
-}
-{
-	Welche Lösungen oder ähnlichen Projekte gibt es schon – Einbettung von Literaturzitaten (mind. 5);
-	Fallbeispiele.
-}
+The most widely used PHSs are PBKDF2, bcrypt and scrypt \cite{cryptoeprint:2015:265}\cite{Andrade:2016:Lyra2}. Both PBKDF2 \cite{moriarty2017pkcs} and bcrypt \cite{provos1999future} allow their users to adjust the processing costs while scrypt \cite{percival:2009:scrypt} allows to adjust both processing and memory costs. Such flexibility is motivated by the constant advances in parallel computing and dedicated hardware, as shown in \cite{orman2013twelve}. In fact, the need for flexible password hashing schemes is exactly the reason why the Password Hashing Competition was announced. More than 20 different password hashing schemes were examined. The proposed schemes include the winner Argon2 \cite{biryukov2016argon2} as well as Lyra2, Catena \cite{forler2013catena}, Makawa \cite{pornin2015makwa}, yescrypt \cite{peslyak2015yescrypt} and others.
 
-\langchooser{Example citation}{Beispielzitat}: \cite{fankhauser:2009:softwaretechnik-security}
+
 
 %=======================================================================
 \section{\langchooser{Table of Contents}{Inhaltsverzeichnis}}

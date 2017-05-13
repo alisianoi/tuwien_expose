@@ -17,51 +17,409 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
-  \entry{fankhauser:2009:softwaretechnik-security}{inbook}{}
-    \name{author}{3}{}{%
-      {{hash=FF}{%
-         family={Fankhauser},
-         familyi={F\bibinitperiod},
-         given={Florian},
-         giveni={F\bibinitperiod},
+  \entry{Andrade:2016:Lyra2}{article}{}
+    \name{author}{4}{}{%
+      {{hash=AER}{%
+         family={Andrade},
+         familyi={A\bibinitperiod},
+         given={E.\bibnamedelima R.},
+         giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod},
       }}%
-      {{hash=SC}{%
-         family={Schanes},
+      {{hash=SMA}{%
+         family={Simplicio},
          familyi={S\bibinitperiod},
-         given={Christian},
-         giveni={C\bibinitperiod},
+         given={M.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
-      {{hash=BC}{%
-         family={Brem},
+      {{hash=BPSLM}{%
+         family={Barreto},
          familyi={B\bibinitperiod},
+         given={P.\bibnamedelima S. L.\bibnamedelima M.},
+         giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod
+  L\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=dSPCF}{%
+         prefix={d.},
+         prefixi={d\bibinitperiod},
+         family={Santos},
+         familyi={S\bibinitperiod},
+         given={P.\bibnamedelima C.\bibnamedelima F.},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  F\bibinitperiod},
+      }}%
+    }
+    \keyw{cryptography;graphics processing units;GPU;Lyra2 algorithm;PHS;attack
+  venues;brute force password-guessing;cryptographic sponges;memory
+  cost;password hashing scheme;processing cost;security level;time-memory
+  trade-offs;Authentication;Cryptography;Hardware;Memory management;Random
+  access memory;Password hashing;cryptographic sponges}
+    \strng{namehash}{AER+1}
+    \strng{fullhash}{AERSMABPSLMSPCFd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.1109/TC.2016.2516011
+    \endverb
+    \field{issn}{0018-9340}
+    \field{number}{10}
+    \field{pages}{3096\bibrangedash 3108}
+    \field{title}{Lyra2: Efficient Password Hashing with High Security against
+  Time-Memory Trade-Offs}
+    \field{volume}{65}
+    \field{journaltitle}{IEEE Transactions on Computers}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Aumasson:2013:BLAKE2}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=AJP}{%
+         family={Aumasson},
+         familyi={A\bibinitperiod},
+         given={Jean-Philippe},
+         giveni={J\bibinitperiod-P\bibinitperiod},
+      }}%
+      {{hash=NS}{%
+         family={Neves},
+         familyi={N\bibinitperiod},
+         given={Samuel},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WOZ}{%
+         family={Wilcox-O'Hearn},
+         familyi={W\bibinitperiod-O\bibinitperiod},
+         given={Zooko},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Winnerlein},
+         familyi={W\bibinitperiod},
          given={Christian},
          giveni={C\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {Pearson Studium}%
+      {Springer-Verlag}%
     }
-    \strng{namehash}{FFSCBC1}
-    \strng{fullhash}{FFSCBC1}
+    \strng{namehash}{AJP+1}
+    \strng{fullhash}{AJPNSWOZWC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of the 11th International Conference on
+  Applied Cryptography and Network Security}
+    \verb{doi}
+    \verb 10.1007/978-3-642-38980-1_8
+    \endverb
+    \field{isbn}{978-3-642-38979-5}
+    \field{pages}{119\bibrangedash 135}
+    \field{series}{ACNS'13}
+    \field{title}{BLAKE2: Simpler, Smaller, Fast As MD5}
+    \verb{url}
+    \verb http://dx.doi.org/10.1007/978-3-642-38980-1_8
+    \endverb
+    \list{location}{1}{%
+      {Banff, AB, Canada}%
+    }
+    \field{year}{2013}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{biryukov2016argon2}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BA}{%
+         family={Biryukov},
+         familyi={B\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Dinu},
+         familyi={D\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Khovratovich},
+         familyi={K\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BADDKD1}
+    \strng{fullhash}{BADDKD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Security and Privacy (EuroS\&P), 2016 IEEE European
+  Symposium on}
+    \field{pages}{292\bibrangedash 302}
+    \field{title}{Argon2: new generation of memory-hard functions for password
+  hashing and other applications}
+    \field{year}{2016}
+  \endentry
+
+  \entry{chang2015performance}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CD}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Donghoon},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=JA}{%
+         family={Jati},
+         familyi={J\bibinitperiod},
+         given={Arpan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Mishra},
+         familyi={M\bibinitperiod},
+         given={Sweta},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SSK}{%
+         family={Sanadhya},
+         familyi={S\bibinitperiod},
+         given={Somitra\bibnamedelima Kumar},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CD+1}
+    \strng{fullhash}{CDJAMSSSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+  \field{note}{\url{http://ai2-s2-pdfs.s3.amazonaws.com/9ee2/aacb6aa8eb102503a2cfc840ced5db893777.pdf}}
+    \field{pages}{139}
+    \field{title}{Performance Analysis of Some Password Hashing Schemes.}
+    \field{volume}{2015}
+    \field{journaltitle}{IACR Cryptology ePrint Archive}
+    \field{year}{2015}
+  \endentry
+
+  \entry{forler2013catena}{report}{}
+    \name{author}{3}{}{%
+      {{hash=FC}{%
+         family={Forler},
+         familyi={F\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lucks},
+         familyi={L\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wenzel},
+         familyi={W\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FCLSWJ1}
+    \strng{fullhash}{FCLSWJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{F}
     \field{sortinithash}{F}
-    \field{chapter}{13}
-    \field{edition}{1}
-    \field{pages}{589\bibrangedash 646}
-    \field{title}{Softwaretechnik - Mit Fallbeispielen aus realen
-  Entwicklungsprojekten}
-    \verb{url}
-    \verb http://www.inso.tuwien.ac.at/publications/softwaretechnik/
-    \endverb
-    \list{location}{1}{%
-      {M{\"u}nchen}%
+    \field{title}{Catena: A memory-consuming password-scrambling framework}
+    \list{institution}{1}{%
+      {Citeseer}%
     }
+    \field{type}{techreport}
+    \field{year}{2013}
+  \endentry
+
+  \entry{cryptoeprint:2015:265}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=HG}{%
+         family={Hatzivasilis},
+         familyi={H\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PI}{%
+         family={Papaefstathiou},
+         familyi={P\bibinitperiod},
+         given={Ioannis},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Manifavas},
+         familyi={M\bibinitperiod},
+         given={Charalampos},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HGPIMC1}
+    \strng{fullhash}{HGPIMC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{howpublished}{Cryptology ePrint Archive, Report 2015/265}
+    \field{note}{\url{http://eprint.iacr.org/2015/265}}
+    \field{title}{Password Hashing Competition - Survey and Benchmark}
+    \field{year}{2015}
+  \endentry
+
+  \entry{moriarty2017pkcs}{report}{}
+    \name{author}{3}{}{%
+      {{hash=MK}{%
+         family={Moriarty},
+         familyi={M\bibinitperiod},
+         given={K},
+         giveni={K},
+      }}%
+      {{hash=KB}{%
+         family={Kaliski},
+         familyi={K\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+      {{hash=RA}{%
+         family={Rusch},
+         familyi={R\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+    }
+    \strng{namehash}{MKKBRA1}
+    \strng{fullhash}{MKKBRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{\url{https://tools.ietf.org/html/rfc8018}}
+    \field{title}{PKCS\# 5: Password-Based Cryptography Specification Version
+  2.1}
+    \field{type}{techreport}
+    \field{year}{2017}
+  \endentry
+
+  \entry{orman2013twelve}{article}{}
+    \name{author}{1}{}{%
+      {{hash=OH}{%
+         family={Orman},
+         familyi={O\bibinitperiod},
+         given={Hilarie},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{OH1}
+    \strng{fullhash}{OH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{number}{5}
+    \field{pages}{91\bibrangedash 94}
+    \field{title}{Twelve Random Characters: Passwords in the Era of Massive
+  Parallelism}
+    \field{volume}{17}
+    \field{journaltitle}{IEEE Internet Computing}
+    \field{year}{2013}
+  \endentry
+
+  \entry{percival:2009:scrypt}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=PC}{%
+         family={Percival},
+         familyi={P\bibinitperiod},
+         given={Colin},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PC1}
+    \strng{fullhash}{PC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{howpublished}{BSFCan09}
+    \field{note}{\url{https://www.tarsnap.com/scrypt/scrypt.pdf}}
+    \field{title}{Stronger Key Derivation via Sequential Memory-Hard Functions}
     \field{year}{2009}
-    \field{urlday}{16}
-    \field{urlmonth}{01}
-    \field{urlyear}{2017}
+  \endentry
+
+  \entry{peslyak2015yescrypt}{report}{}
+    \name{author}{1}{}{%
+      {{hash=eP}{%
+         prefix={exander},
+         prefixi={e\bibinitperiod},
+         family={Peslyak},
+         familyi={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{Pe1}
+    \strng{fullhash}{Pe1}
+    \field{labelnamesource}{author}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+  \field{note}{\url{https://password-hashing.net/submissions/specs/yescrypt-v2.pdf}}
+    \field{type}{techreport}
+    \field{year}{2015}
+  \endentry
+
+  \entry{pornin2015makwa}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=PT}{%
+         family={Pornin},
+         familyi={P\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PT1}
+    \strng{fullhash}{PT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{note}{\url{http://www.bolet.org/makwa/makwa-spec-20150422.pdf}}
+    \field{title}{The Makwa password hashing function}
+    \field{year}{2015}
+  \endentry
+
+  \entry{provos1999future}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=PN}{%
+         family={Provos},
+         familyi={P\bibinitperiod},
+         given={Niels},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Mazieres},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PNMD1}
+    \strng{fullhash}{PNMD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+  \field{note}{\url{https://www.usenix.org/legacy/events/usenix99/full_papers/provos/provos.pdf}}
+    \field{title}{A Future-Adaptable Password Scheme.}
+    \field{year}{1999}
   \endentry
 \endsortlist
 \endinput
