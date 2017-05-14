@@ -10,13 +10,8 @@
 %
 %TODO Diese Informationen sind anzupassen
 %
-\title{
-	\langchooser{
-		Lyra2 implementation in Java
-	}{
-		Vorl\"aufiger Arbeitstitel der Arbeit
-	}
-}
+\title{Lyra2 implementation in Java}
+
 % Bitte setzen falls der Titel zu lang ist
 %\shorttitle{Kurztitel}
 \author{Aleksandr Lisianoi}
@@ -27,7 +22,8 @@
 \dokumenttyp{%
 	\langchooser{Bachelor Thesis}{Bachelorarbeit}
 }
-\assistent{}
+\betreuer{Clemens Hlauschek}
+\assistent{Clemens Hlauschek}
 
 % Bibliographie file
 \bibliography{db}
@@ -39,7 +35,7 @@
 \section{\langchooser{Problem Description}{Problemstellung}}
 %=======================================================================
 
-Password-based authentication is the most widespread method of proving the identity of a user or approving access to a resource. It is common practice to use Password Hashing Schemes (PHS for short) in order to avoid manipulating the password in cleartext. These schemes are often built by combining other cryptographic primitives (most notably, cryptographic hash functions) in order to make the resulting hash as difficult to invert as possible. The existing PHS called Lyra2 \cite{Andrade:2016:Lyra2} and its reference implementation are the primary focus of this thesis. 
+Password-based authentication is the most widespread method of proving the identity of a user or approving access to a resource. It is common practice to use Password Hashing Schemes (PHS for short) in order to avoid manipulating the password in cleartext. These schemes are often built by combining other cryptographic primitives (most notably, cryptographic hash functions) in order to make the resulting hash as difficult to invert as possible. An existing PHS called Lyra2 \cite{Andrade:2016:Lyra2} and its reference implementation are the primary focus of this thesis. 
 
 %=======================================================================
 \section{\langchooser{Expected Results}{Zielsetzung/Motivation}}
@@ -58,14 +54,14 @@ There are several goals for this thesis:
 \section{\langchooser{Methodological Approach}{Methodik}}
 %=======================================================================
 
-The core of Lyra2 \cite{Andrade:2016:Lyra2} is a \emph{cryptographic sponge}, a simple yet elegant construction which in turn heavily relies on a fixed-width permutation. Blake2b \cite{Aumasson:2013:BLAKE2} or BlaMka \cite{Andrade:2016:Lyra2} are good examples of existing cryptographic hash functions which are often used as building blocks in a cryptographic sponge. However, the theoretical properties of neither cryptographic hash functions nor cryptographic sponges are the focus of this thesis. Instead, this work has the following approach:
+The core of Lyra2 \cite{Andrade:2016:Lyra2} is a \emph{cryptographic sponge}, a simple yet elegant construction which in turn heavily relies on a fixed-width permutation. Blake2b \cite{Aumasson:2013:BLAKE2} or BlaMka \cite{Andrade:2016:Lyra2} are good examples of existing cryptographic hash functions which are often used as building blocks in cryptographic sponges. However, the theoretical properties of neither cryptographic hash functions nor cryptographic sponges are the focus of this thesis. Instead, this work will focus on build and test automation and reproducibility of benchmarking results. In order to achieve that, the following will be done:
 
-\subsection{Test harness}
+\subsection{Test harness development}
 \label{subsection:test-harness}
 
 Current Lyra2 implementation is written in C, its build system is a single makefile and there are shell scripts that run basic benchmarks. The makefile supports six build targets (\texttt{generic-x86-64}, \texttt{linux-x86-64-sse}, \texttt{linux-x86-64-cuda}, etc.), three sponges (Blake2b, BlaMka and half-round BlaMka), two modes of parallelism (single- and multithreaded) and the number of columns of the memory matrix is also set at compile time. This results in a (really) big build matrix. So, the executables it produces should be tested automatically which is currently not done at all.
 
-As the first step of this thesis, an improved build system and a unit test system will be developed. There are many possible ways to do this but I would like to propose the following:
+As the first step of this thesis, an improved build system and a unit test system will be developed. There are many ways to do this but the following is proposed:
 
 \begin{enumerate}
 \item Write a \texttt{Python} script to automate the \texttt{makefile} building process. Here is
@@ -93,32 +89,49 @@ This would be a logical conclusion for the thesis. Lyra2 was compared to other p
 \section{State of the Art}
 %=======================================================================
 
-The most widely used PHSs are PBKDF2, bcrypt and scrypt \cite{cryptoeprint:2015:265}\cite{Andrade:2016:Lyra2}. Both PBKDF2 \cite{moriarty2017pkcs} and bcrypt \cite{provos1999future} allow their users to adjust the processing costs while scrypt \cite{percival:2009:scrypt} allows to adjust both processing and memory costs. Such flexibility is motivated by the constant advances in parallel computing and dedicated hardware, as shown in \cite{orman2013twelve}. In fact, the need for flexible password hashing schemes is exactly the reason why the Password Hashing Competition was announced. More than 20 different password hashing schemes were examined. The proposed schemes include the winner Argon2 \cite{biryukov2016argon2} as well as Lyra2, Catena \cite{forler2013catena}, Makawa \cite{pornin2015makwa}, yescrypt \cite{peslyak2015yescrypt} and others.
-
-
+The most widely used PHSs are PBKDF2, bcrypt and scrypt \cite{cryptoeprint:2015:265}\cite{Andrade:2016:Lyra2}. Both PBKDF2 \cite{moriarty2017pkcs} and bcrypt \cite{provos1999future} allow their users to adjust the processing costs while scrypt \cite{percival:2009:scrypt} allows to adjust both processing and memory costs. Such flexibility is motivated by the constant advances in parallel computing and dedicated hardware, as shown in \cite{orman2013twelve}. In fact, the need for flexible password hashing schemes is exactly the reason why the Password Hashing Competition was announced. More than 20 different password hashing schemes were examined. The proposed schemes include the winner Argon2 \cite{biryukov2016argon2} as well as Lyra2, Catena \cite{forler2013catena}, Makawa \cite{pornin2015makwa}, yescrypt \cite{peslyak2015yescrypt} and others. Also, there is growing interest in rigorous mathematical analysis of PHSs \cite{cryptoeprint:2015:430}.
 
 %=======================================================================
 \section{\langchooser{Table of Contents}{Inhaltsverzeichnis}}
 %=======================================================================
 
-\langchooser
-{	
-	Preliminary structor of the thesis: about 1 page
-}
-{
-	Geplante Struktur der Arbeit: ca. 1 Seite	
-}
-
+Preliminary structure of the thesis (about 1 page)
 
 \begin{samepage}
   \begin{contentstructure}
-    \item Einleitung	\estimatedpages{3 Seiten}
-    \item weiteres Kapitel \estimatedpages{x Seiten}
+  \item Introduction \estimatedpages{3 pages}
+  \item Theoretical background \estimatedpages{7 Seiten}
     \begin{contentstructure}
-      \item erstes Unterkapitel
-      \item \dots
+    \item Cryptographic sponges \estimatedpages{2 pages}
+      \begin{contentstructure}
+      \item Definition and examples \estimatedpages{1 page}
+      \item Essential properties \estimatedpages{1 page}
+      \end{contentstructure}
+    \item Lyra2 algorithm \estimatedpages{5 pages}
+      \begin{contentstructure}
+      \item{Bootstrapping} \estimatedpages{1 page}
+      \item{Setup phase} \estimatedpages{1 page}
+      \item{Wandering phase} \estimatedpages{1 page}
+      \item{Wrap-up phase} \estimatedpages{1 page}
+      \item{Underlying sponge} \estimatedpages{1 page}
+        \end{contentstructure}
     \end{contentstructure}
-    \item \dots
+  \item Lyra2 implementation \estimatedpages{2 pages}
+    \begin{contentstructure}
+    \item Structure of the C implementation \estimatedpages{1 page}
+    \item Structure of the Java implementation \estimatedpages{1 page}
+    \end{contentstructure}
+  \item Lyra2 comparison \estimatedpages{4 pages}
+    \begin{contentstructure}
+    \item Structure of the comparison project \estimatedpages{1 page}
+    \item Comparison method, reproducibility \estimatedpages{1 page}
+    \item Comparison results \estimatedpages{2 pages}
+      \begin{contentstructure}
+      \item Implementation compatibility \estimatedpages{1 page}
+      \item Comparative performance \estimatedpages{1 page}
+      \end{contentstructure}
+    \end{contentstructure}
+  \item Discussion \estimatedpages{1 page}
   \end{contentstructure}
 \end{samepage}
 

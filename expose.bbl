@@ -166,6 +166,40 @@
     \field{year}{2016}
   \endentry
 
+  \entry{cryptoeprint:2015:430}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=BA}{%
+         family={Biryukov},
+         familyi={B\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Dinu},
+         familyi={D\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Khovratovich},
+         familyi={K\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BADDKD1}
+    \strng{fullhash}{BADDKD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{Cryptology ePrint Archive, Report 2015/430}
+    \field{note}{\url{http://eprint.iacr.org/2015/430}}
+    \field{title}{Fast and Tradeoff-Resilient Memory-Hard Functions for
+  Cryptocurrencies and Password Hashing}
+    \field{year}{2015}
+  \endentry
+
   \entry{chang2015performance}{article}{}
     \name{author}{4}{}{%
       {{hash=CD}{%
@@ -359,19 +393,21 @@
 
   \entry{peslyak2015yescrypt}{report}{}
     \name{author}{1}{}{%
-      {{hash=eP}{%
-         prefix={exander},
-         prefixi={e\bibinitperiod},
+      {{hash=PA}{%
          family={Peslyak},
          familyi={P\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{Pe1}
-    \strng{fullhash}{Pe1}
+    \strng{namehash}{PA1}
+    \strng{fullhash}{PA1}
     \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
     \field{sortinit}{P}
     \field{sortinithash}{P}
   \field{note}{\url{https://password-hashing.net/submissions/specs/yescrypt-v2.pdf}}
+    \field{title}{yescrypt - a Password Hashing Competition submission}
     \field{type}{techreport}
     \field{year}{2015}
   \endentry

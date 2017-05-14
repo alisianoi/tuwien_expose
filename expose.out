@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Problem Description}{}% 1
 \BOOKMARK [1][-]{section.2}{Expected Results}{}% 2
 \BOOKMARK [1][-]{section.3}{Methodological Approach}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Test harness}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.1}{Test harness development}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{Lyra2 implementation in Java}{section.3}% 5
 \BOOKMARK [2][-]{subsection.3.3}{Algorithm level compatibility}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.4}{Performace comparison}{section.3}% 7
